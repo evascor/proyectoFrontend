@@ -62,7 +62,6 @@
   :root {
     scroll-behavior: smooth;
     scrollbar-width: none;
-    /* overflow: hidden; */
   }
 }
 
@@ -85,6 +84,18 @@ body {
 
 .alertaDescarga {
   display: none;
+}
+
+/* Carousel de imagenes */
+
+.carousel {
+  position: relative;
+  width: 50%;
+}
+
+.carousel-item img {
+  height: 50%;
+  width: 50%;
 }
 
 hr {
@@ -286,9 +297,7 @@ kbd,
 samp {
   font-family: var(--bs-font-monospace);
   font-size: 1em;
-  direction: ltr
-    /* rtl:ignore */
-  ;
+  direction: ltr;
   unicode-bidi: bidi-override;
 }
 
