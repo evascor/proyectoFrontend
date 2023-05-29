@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', event => {
+window.addEventListener('DOMContentLoaded', () => {
     // Activate Bootstrap scrollspy on the main nav element
     const sideNav = document.body.querySelector('#sideNav');
     if (sideNav) {
@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#sideNav',
             offset: 74,
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -39,11 +39,11 @@ let element = document.body;
 
 function anochecer(){
     element.classList.toggle('dark-theme');
-};
+}
 
 function amanecer(){
     element.classList.toggle('light-theme');
-};
+}
 
 var hora = new Date();
 var horaActual = [`${hora.getHours()}:${hora.getMinutes()}`];
@@ -55,7 +55,7 @@ if (horaActual >= "21:00" || horaActual <= "06:00"){
 }else{
     amanecer();
     console.log(false);
-};
+}
 
 // Etiqueta del botón de descarga
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
@@ -105,7 +105,7 @@ function validateForm() {
     if (email == "") {
         printError("emailErr", "Please enter your email address");
     } else {
-        let regexEmail = /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+        let regexEmail = /^\w+([.+-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/;
         if (regexEmail.test(email) === false) {
             printError("emailErr", "Introduzca un email válido");
         } else {
@@ -145,9 +145,9 @@ function validateForm() {
         return false;
     } else {
         alert('Tu mensaje se ha enviado con éxito');
-    };
+    }
 
-};
+}
 
 // Footer
 let fecha = document.querySelector('#fecha');
