@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', event => {
-
     // Activate Bootstrap scrollspy on the main nav element
     const sideNav = document.body.querySelector('#sideNav');
     if (sideNav) {
@@ -21,22 +20,56 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
 });
+
+// Easter Egg
+let previousTitle = document.title;
+
+window.addEventListener('blur', () => {
+    previousTitle = document.title;
+    document.title = '¡ V u e l v e !';
+});
+
+window.addEventListener('focus', () => {
+    document.title = previousTitle;
+});
+
+// Toogler Dark-Light Mode
+let element = document.body;
+
+function anochecer(){
+    element.classList.toggle('dark-theme');
+};
+
+function amanecer(){
+    element.classList.toggle('light-theme');
+};
+
+var hora = new Date();
+var horaActual = [`${hora.getHours()}:${hora.getMinutes()}`];
+console.log(horaActual);
+// Hacer que entre las 21:00h - 06:00h se ponga por defecto en modo noche
+if (horaActual >= "21:00" || horaActual <= "06:00"){
+    anochecer();
+    console.log(true);
+}else{
+    amanecer();
+    console.log(false);
+};
 
 // Etiqueta del botón de descarga
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
+    return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
 // Descargar archivo pdf
 var btnDescargar = document.querySelector('.descarga-btn');
 btnDescargar.addEventListener('click', function() {
-  let enlaceDescarga = document.getElementById('cv_pdf');
-  enlaceDescarga.click();
-  let elementoAlerta = document.querySelector('.alertaDescarga');
-  elementoAlerta.classList.remove('alertaDescarga');
+    let enlaceDescarga = document.getElementById('cv_pdf');
+    enlaceDescarga.click();
+    let elementoAlerta = document.querySelector('.alertaDescarga');
+    elementoAlerta.classList.remove('alertaDescarga');
 });
 
 // Validación Formulario
